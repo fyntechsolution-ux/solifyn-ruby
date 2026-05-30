@@ -57,13 +57,12 @@ Please follow the [installation](#installation) procedure and then run the follo
 # Load the gem
 require 'solifyn'
 
-api_instance = Solifyn::AffiliateApi.new
-id = 'id_example' # String | 
+api_instance = Solifyn::BalanceApi.new
 
 begin
-  api_instance.affiliate_controller_approve_connection(id)
+  api_instance.balance_controller_find_all
 rescue Solifyn::ApiError => e
-  puts "Exception when calling AffiliateApi->affiliate_controller_approve_connection: #{e}"
+  puts "Exception when calling BalanceApi->balance_controller_find_all: #{e}"
 end
 
 ```
@@ -74,37 +73,9 @@ All URIs are relative to *http://localhost:8000*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*Solifyn::AffiliateApi* | [**affiliate_controller_approve_connection**](docs/AffiliateApi.md#affiliate_controller_approve_connection) | **POST** /v1/affiliate/program/connections/{id}/approve | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_archive_connection**](docs/AffiliateApi.md#affiliate_controller_archive_connection) | **POST** /v1/affiliate/program/connections/{id}/archive | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_delete_override**](docs/AffiliateApi.md#affiliate_controller_delete_override) | **DELETE** /v1/affiliate/program/override/{id} | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_get_earnings_connections**](docs/AffiliateApi.md#affiliate_controller_get_earnings_connections) | **GET** /v1/affiliate/earnings/connections | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_get_earnings_ledger**](docs/AffiliateApi.md#affiliate_controller_get_earnings_ledger) | **GET** /v1/affiliate/earnings/ledger | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_get_earnings_stats**](docs/AffiliateApi.md#affiliate_controller_get_earnings_stats) | **GET** /v1/affiliate/earnings/stats | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_get_marketplace**](docs/AffiliateApi.md#affiliate_controller_get_marketplace) | **GET** /v1/affiliate/marketplace | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_get_program_connections**](docs/AffiliateApi.md#affiliate_controller_get_program_connections) | **GET** /v1/affiliate/program/connections | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_get_program_ledger**](docs/AffiliateApi.md#affiliate_controller_get_program_ledger) | **GET** /v1/affiliate/program/ledger | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_get_program_settings**](docs/AffiliateApi.md#affiliate_controller_get_program_settings) | **GET** /v1/affiliate/program/settings | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_join_program**](docs/AffiliateApi.md#affiliate_controller_join_program) | **POST** /v1/affiliate/marketplace/join | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_reject_connection**](docs/AffiliateApi.md#affiliate_controller_reject_connection) | **POST** /v1/affiliate/program/connections/{id}/reject | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_save_override**](docs/AffiliateApi.md#affiliate_controller_save_override) | **POST** /v1/affiliate/program/override | 
-*Solifyn::AffiliateApi* | [**affiliate_controller_save_program_settings**](docs/AffiliateApi.md#affiliate_controller_save_program_settings) | **POST** /v1/affiliate/program/settings | 
 *Solifyn::BalanceApi* | [**balance_controller_find_all**](docs/BalanceApi.md#balance_controller_find_all) | **GET** /v1/balances | 
 *Solifyn::BalanceApi* | [**balance_controller_generate_report**](docs/BalanceApi.md#balance_controller_generate_report) | **GET** /v1/balances/report | 
 *Solifyn::BalanceApi* | [**balance_controller_get_summary**](docs/BalanceApi.md#balance_controller_get_summary) | **GET** /v1/balances/summary | 
-*Solifyn::BillingApi* | [**billing_get_plans**](docs/BillingApi.md#billing_get_plans) | **GET** /v1/billing/plans | Get Platform Plans
-*Solifyn::BrandsApi* | [**brands_create**](docs/BrandsApi.md#brands_create) | **POST** /v1/user/brand | Create Brand
-*Solifyn::BrandsApi* | [**brands_get**](docs/BrandsApi.md#brands_get) | **GET** /v1/user/brand/{id} | Retrieve Brand
-*Solifyn::BrandsApi* | [**brands_list**](docs/BrandsApi.md#brands_list) | **GET** /v1/user/brands | List Brands
-*Solifyn::BrandsApi* | [**brands_update**](docs/BrandsApi.md#brands_update) | **PATCH** /v1/user/brand/{id} | Update Brand
-*Solifyn::BusinessesApi* | [**businesses_billing_history**](docs/BusinessesApi.md#businesses_billing_history) | **GET** /v1/user/billing/history | Get Platform Billing History
-*Solifyn::BusinessesApi* | [**merchants_generate_api_keys**](docs/BusinessesApi.md#merchants_generate_api_keys) | **POST** /v1/user/whop-api-keys | Rotate Whop API Keys
-*Solifyn::BusinessesApi* | [**merchants_update_page**](docs/BusinessesApi.md#merchants_update_page) | **PATCH** /v1/user/page | Update Page configuration
-*Solifyn::BusinessesApi* | [**merchants_update_settings**](docs/BusinessesApi.md#merchants_update_settings) | **PATCH** /v1/user/settings | Update Merchant Settings
-*Solifyn::BusinessesApi* | [**merchants_update_theme**](docs/BusinessesApi.md#merchants_update_theme) | **PATCH** /v1/user/theme | Update Theme
-*Solifyn::ChatApi* | [**chat_controller_get_merchant_messages**](docs/ChatApi.md#chat_controller_get_merchant_messages) | **GET** /v1/chat/merchant/messages/{customerId} | 
-*Solifyn::ChatApi* | [**chat_controller_get_merchant_sessions**](docs/ChatApi.md#chat_controller_get_merchant_sessions) | **GET** /v1/chat/merchant/sessions | 
-*Solifyn::ChatApi* | [**chat_controller_send_customer_message**](docs/ChatApi.md#chat_controller_send_customer_message) | **POST** /v1/chat/customer/message | 
-*Solifyn::ChatApi* | [**chat_controller_send_merchant_message**](docs/ChatApi.md#chat_controller_send_merchant_message) | **POST** /v1/chat/merchant/message | 
 *Solifyn::CheckoutApi* | [**checkout_create**](docs/CheckoutApi.md#checkout_create) | **POST** /v1/checkout/create | Create Checkout Session
 *Solifyn::CheckoutApi* | [**checkout_create_collection**](docs/CheckoutApi.md#checkout_create_collection) | **POST** /v1/checkout/collection/create | Create Collection Checkout Session
 *Solifyn::CheckoutApi* | [**checkout_get_session**](docs/CheckoutApi.md#checkout_get_session) | **GET** /v1/checkout/session/{id} | Get Checkout Session Details
@@ -125,14 +96,6 @@ Class | Method | HTTP request | Description
 *Solifyn::CollectionsApi* | [**collections_unarchive**](docs/CollectionsApi.md#collections_unarchive) | **POST** /v1/collections/{id}/unarchive | Unarchive Collection
 *Solifyn::CollectionsApi* | [**collections_update**](docs/CollectionsApi.md#collections_update) | **PATCH** /v1/collections/{id} | Update Collection
 *Solifyn::CollectionsApi* | [**collections_update_product**](docs/CollectionsApi.md#collections_update_product) | **PATCH** /v1/collections/{id}/products/{productId} | Update Collection Product
-*Solifyn::CommunityApi* | [**community_controller_create_post**](docs/CommunityApi.md#community_controller_create_post) | **POST** /v1/community/posts | 
-*Solifyn::CommunityApi* | [**community_controller_delete_post**](docs/CommunityApi.md#community_controller_delete_post) | **DELETE** /v1/community/posts/{id} | 
-*Solifyn::CommunityApi* | [**community_controller_get_posts**](docs/CommunityApi.md#community_controller_get_posts) | **GET** /v1/community/posts | 
-*Solifyn::CommunityApi* | [**community_controller_like_post**](docs/CommunityApi.md#community_controller_like_post) | **PATCH** /v1/community/posts/{id}/like | 
-*Solifyn::CommunityApi* | [**community_controller_report_post**](docs/CommunityApi.md#community_controller_report_post) | **POST** /v1/community/posts/{id}/report | 
-*Solifyn::CommunityApi* | [**community_controller_share_post**](docs/CommunityApi.md#community_controller_share_post) | **PATCH** /v1/community/posts/{id}/share | 
-*Solifyn::CommunityApi* | [**community_controller_unlike_post**](docs/CommunityApi.md#community_controller_unlike_post) | **PATCH** /v1/community/posts/{id}/unlike | 
-*Solifyn::CommunityApi* | [**community_controller_update_post**](docs/CommunityApi.md#community_controller_update_post) | **PATCH** /v1/community/posts/{id} | 
 *Solifyn::CustomersApi* | [**customers_create**](docs/CustomersApi.md#customers_create) | **POST** /v1/customers | Create Customer
 *Solifyn::CustomersApi* | [**customers_generate_invite**](docs/CustomersApi.md#customers_generate_invite) | **POST** /v1/customers/{id}/share | Generate Shared Invite
 *Solifyn::CustomersApi* | [**customers_get**](docs/CustomersApi.md#customers_get) | **GET** /v1/customers/{id} | Retrieve Customer
@@ -198,8 +161,6 @@ Class | Method | HTTP request | Description
 *Solifyn::OrdersApi* | [**orders_list**](docs/OrdersApi.md#orders_list) | **GET** /v1/orders | List Orders
 *Solifyn::OrdersApi* | [**orders_update**](docs/OrdersApi.md#orders_update) | **PATCH** /v1/orders/{id} | Update Order Billing Address
 *Solifyn::OrdersApi* | [**refunds_create**](docs/OrdersApi.md#refunds_create) | **POST** /v1/orders/{id}/refund | Create Refund
-*Solifyn::PartnerApi* | [**partner_controller_get_partner_commissions**](docs/PartnerApi.md#partner_controller_get_partner_commissions) | **GET** /v1/partner/commissions | 
-*Solifyn::PartnerApi* | [**partner_controller_get_partner_stats**](docs/PartnerApi.md#partner_controller_get_partner_stats) | **GET** /v1/partner/stats | 
 *Solifyn::PayoutsApi* | [**payouts_create_withdrawal**](docs/PayoutsApi.md#payouts_create_withdrawal) | **POST** /v1/payouts/withdrawals | Create Withdrawal
 *Solifyn::PayoutsApi* | [**payouts_get_account**](docs/PayoutsApi.md#payouts_get_account) | **GET** /v1/payouts/account | Retrieve Payout Account
 *Solifyn::PayoutsApi* | [**payouts_get_account_link**](docs/PayoutsApi.md#payouts_get_account_link) | **GET** /v1/payouts/account-link | Create Account Link
@@ -226,16 +187,6 @@ Class | Method | HTTP request | Description
 *Solifyn::SubscriptionsApi* | [**subscriptions_action**](docs/SubscriptionsApi.md#subscriptions_action) | **POST** /v1/subscriptions/{subscriptionId}/{action} | Subscription Action
 *Solifyn::SubscriptionsApi* | [**subscriptions_get**](docs/SubscriptionsApi.md#subscriptions_get) | **GET** /v1/subscriptions/{id} | Retrieve Subscription Details
 *Solifyn::SubscriptionsApi* | [**subscriptions_list**](docs/SubscriptionsApi.md#subscriptions_list) | **GET** /v1/subscriptions | List Subscriptions
-*Solifyn::TicketApi* | [**ticket_controller_create_ticket**](docs/TicketApi.md#ticket_controller_create_ticket) | **POST** /v1/tickets | 
-*Solifyn::TicketApi* | [**ticket_controller_get_ticket_details**](docs/TicketApi.md#ticket_controller_get_ticket_details) | **GET** /v1/tickets/{id} | 
-*Solifyn::TicketApi* | [**ticket_controller_get_tickets**](docs/TicketApi.md#ticket_controller_get_tickets) | **GET** /v1/tickets | 
-*Solifyn::TicketApi* | [**ticket_controller_reply_ticket**](docs/TicketApi.md#ticket_controller_reply_ticket) | **POST** /v1/tickets/{id}/replies | 
-*Solifyn::TicketApi* | [**ticket_controller_update_ticket**](docs/TicketApi.md#ticket_controller_update_ticket) | **PATCH** /v1/tickets/{id} | 
-*Solifyn::UserProfileThemesApi* | [**users_get_my_page**](docs/UserProfileThemesApi.md#users_get_my_page) | **GET** /v1/user/my-page | Get My Page details
-*Solifyn::UserProfileThemesApi* | [**users_get_my_theme**](docs/UserProfileThemesApi.md#users_get_my_theme) | **GET** /v1/user/my-theme | Get My Theme
-*Solifyn::UserProfileThemesApi* | [**users_get_settings**](docs/UserProfileThemesApi.md#users_get_settings) | **GET** /v1/user/settings | Retrieve User Settings
-*Solifyn::UserProfileThemesApi* | [**users_get_stats**](docs/UserProfileThemesApi.md#users_get_stats) | **GET** /v1/user/dashboard-stats | Get Dashboard Statistics
-*Solifyn::UserProfileThemesApi* | [**users_get_theme_by_subdomain**](docs/UserProfileThemesApi.md#users_get_theme_by_subdomain) | **GET** /v1/user/theme/{subdomain} | Get Theme by Subdomain
 *Solifyn::WebhookApi* | [**webhook_controller_handle_svix_webhook**](docs/WebhookApi.md#webhook_controller_handle_svix_webhook) | **POST** /v1/webhook/svix | 
 *Solifyn::WebhookApi* | [**webhook_controller_handle_webhook**](docs/WebhookApi.md#webhook_controller_handle_webhook) | **POST** /v1/webhook | 
 
